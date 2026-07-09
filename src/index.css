@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  background-color: #22092C; /* Stops the white from showing */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 3. Ensure whatever wraps your main content takes up the empty space */
+/* If you have a <main> tag or standard div wrapping your routes, it needs to expand */
+.main-content {
+  flex-grow: 1; 
+}
+
+
+section {
+
+  padding: 80px 10%;
+
+}
+
+
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.projects-container {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 30px;
+
+}
+
+.project-card {
+  width: 350px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+.project-category {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.project-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+}
+
+.project-buttons a {
+  padding: 10px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.project-detail-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+
+.architecture-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.architecture-item {
+  padding: 15px 30px;
+  border-radius: 10px;
+  background: #f2f2f2;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-image {
+  width: 300px;
+  border-radius: 15px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact textarea {
+  height: 150px;
+  resize: none;
+}
+
+.contact button {
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* --- FOOTER CONTAINER --- */
+.footer {
+  /* Uses the deep purple theme color with slight transparency */
+  background: rgba(34, 9, 44, 0.95); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* A subtle frosted line to separate it from the content above */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  padding: 30px 10%;
+  margin-top: auto; /* Helps push the footer to the bottom of the page */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows stacking on smaller screens */
+  gap: 15px;
+}
+
+.footer p {
+  color: #c4c4c4; /* Soft grey for readability */
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Gives your name a pop of color using your palette */
+.footer-name {
+  color: #F05941; 
+  font-weight: 600;
+}
+
+/* --- FOOTER LINKS --- */
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #e2e2e2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #BE3144; /* Crimson hover effect */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .footer {
+    padding: 25px 5%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,154 @@
+/* --- NAVBAR CONTAINER --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  
+  /* Modern Glassmorphism Effect */
+  background: rgba(34, 9, 44, 0.95); /* Deep purple, slightly transparent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* Keeps navbar fixed at the top */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- LOGO --- */
+.navbar .logo a {
+  font-size: 28px;
+  font-weight: 800;
+  text-decoration: none;
+  /* Coral to Crimson gradient for the logo */
+  background: linear-gradient(90deg, #F05941, #BE3144);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+/* --- DESKTOP NAVIGATION --- */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e2e2e2;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect: Animated underline */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F05941; /* Coral underline */
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* --- HAMBURGER MENU (Hidden on Desktop) --- */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1001;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 5%; /* Smaller padding on mobile */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  /* Transform hamburger into an 'X' when active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #F05941;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #F05941;
+  }
+
+  /* Mobile Dropdown Menu */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #1A0724; /* Dark solid background for readability */
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    
+    /* Hidden state */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  /* Visible state */
+  .nav-links.open {
+    max-height: 300px; /* Expands the menu smoothly */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+x
+  .nav-links a {
+    display: block;
+    padding: 20px 0;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Remove underline hover effect on mobile */
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(190, 49, 68, 0.1); /* Subtle crimson highlight */
+    color: #F05941;
+  }
+}

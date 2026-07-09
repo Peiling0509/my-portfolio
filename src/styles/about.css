@@ -1,0 +1,263 @@
+/* --- ABOUT SECTION CONTAINER --- */
+.about-section {
+  padding: 100px 10%;
+  background-color: #22092C;
+  /* Global theme background */
+  color: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.about-container {
+  display: flex;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* --- LEFT COLUMN: TABS --- */
+.tabs-column {
+  flex: 0 0 280px;
+  /* Fixed width for the tabs menu */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tab-btn {
+  width: 100%;
+  padding: 18px 25px;
+  background-color: #1A0724;
+  /* Darker card background */
+  color: #c4c4c4;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: rgba(240, 89, 65, 0.1);
+  color: #ffffff;
+}
+
+/* Active state matching your mockup, using your Coral theme color */
+.tab-btn.active {
+  background-color: #F05941;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(240, 89, 65, 0.3);
+}
+
+/* --- RIGHT COLUMN: DYNAMIC CONTENT --- */
+.content-column {
+  flex: 1;
+  min-height: 400px;
+}
+
+.content-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.content-subtitle {
+  font-size: 16px;
+  color: #a0a0a0;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* --- CARDS GRID (Experience & Education) --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.info-card {
+  background-color: rgba(26, 7, 36, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(240, 89, 65, 0.3);
+}
+
+.card-date {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #F05941;
+  /* Accent color */
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.card-highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #c4c4c4;
+  margin-bottom: 15px;
+}
+
+/* Adds the little colored dot next to the subtitle like in the mockup */
+.card-highlight::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #F05941;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #888888;
+  line-height: 1.6;
+}
+
+/* --- BULLETED LISTS FOR EXPERIENCE CARDS --- */
+.card-desc-list {
+  font-size: 14px;
+  color: #888888;
+  line-height: 1.6;
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.card-desc-list li {
+  margin-bottom: 10px;
+}
+
+.card-desc-list li::marker {
+  color: #F05941;
+}
+
+/* --- SKILLS LAYOUT --- */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.skill-tag {
+  background-color: rgba(190, 49, 68, 0.15);
+  /* Crimson tint */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(190, 49, 68, 0.3);
+}
+
+/* --- ABOUT ME TEXT --- */
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-text-container p {
+  font-size: 16px;
+  color: #c4c4c4;
+  line-height: 1.8;
+}
+
+/* --- ANIMATION --- */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* Transform tabs into a perfect 2x2 grid */
+  .tabs-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    flex: auto;
+  }
+
+  /* Make tabs chunky and centered to match the mockup */
+  .tab-btn {
+    width: 100%;
+    padding: 40px 20px;
+    /* Increases height to make them square-ish */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    /* Stacks the content cards cleanly */
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 60px 5%;
+  }
+
+  .content-title {
+    font-size: 32px;
+  }
+
+  /* Slightly reduce the tab chunkiness on very small phone screens */
+  .tab-btn {
+    padding: 30px 10px;
+    font-size: 15px;
+  }
+
+  .content-column {
+    min-height: auto;
+  }
+}

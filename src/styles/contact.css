@@ -1,0 +1,249 @@
+/* --- CONTACT SECTION CONTAINER --- */
+.contact-section {
+  padding: 100px 10%;
+  background-color: #22092C;
+  color: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', system-ui, sans-serif;
+  position: relative;
+
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* --- LEFT COLUMN: INFO --- */
+.contact-info-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.section-title {
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #a0a0a0;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 90%;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: rgba(26, 7, 36, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateX(10px);
+  border-color: rgba(240, 89, 65, 0.3);
+}
+
+.card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(190, 49, 68, 0.15);
+  /* Crimson tint */
+  color: #F05941;
+}
+
+.card-details h4 {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-details a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.card-details a:hover {
+  color: #F05941;
+}
+
+/* --- RIGHT COLUMN: FORM --- */
+.contact-form-column {
+  flex: 1;
+  background-color: rgba(26, 7, 36, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e2e2;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: #22092C;
+  /* Darker inner background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #F05941;
+  box-shadow: 0 0 15px rgba(240, 89, 65, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Inherits your global button styling, adapted for the form */
+.submit-btn {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #BE3144, #872341);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(190, 49, 68, 0.4);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(240, 89, 65, 0.6);
+  background: linear-gradient(135deg, #872341, #BE3144);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- CUSTOM TOAST NOTIFICATION --- */
+.toast-notification {
+  position: fixed;
+  bottom: -100px;
+  /* Hidden below screen initially */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background-color: #1A0724;
+  color: #ffffff;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Classes to show the toast and color it based on state */
+.toast-notification.show {
+  bottom: 40px;
+  /* Slides up into view */
+}
+
+.toast-notification.success svg {
+  color: #4cd137;
+  /* Green checkmark */
+}
+
+.toast-notification.error svg {
+  color: #F05941;
+  /* Coral/Red X */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .contact-form-column {
+    padding: 30px 20px;
+  }
+
+  .section-title {
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    margin: 0 auto 30px auto;
+  }
+}
